@@ -1,0 +1,46 @@
+{
+  "name": "time_periods_of_history",
+  "version": "1.0.0",
+  "description": "Application for viewing periods of history",
+  "main": "index.ts",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mirnyjj/time_periods_of_history.git"
+  },
+  "keywords": [
+    "periods",
+    "history",
+    "time",
+    "pet-project"
+  ],
+  "author": "Maksim Mirnyjj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mirnyjj/time_periods_of_history/issues"
+  },
+  "homepage": "https://github.com/Mirnyjj/time_periods_of_history#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/react-dom": "^19.1.7",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.4",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "styled-components": "^6.1.19",
+    "typescript": "^5.9.2"
+  }
+}
