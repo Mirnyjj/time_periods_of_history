@@ -1,104 +1,133 @@
-const historicalPeriods = [
+export const historicalPeriods = [
   {
-    years: "1992 - 1997",
+    yearStart: 1992,
+    yearEnd: 1997,
+    categories: "Политические изменения и конфликты",
     events: [
-      { year: "1992", description: "Распад Чехословакии на Чехию и Словакию" },
+      { year: 1992, description: "Распад Чехословакии на Чехию и Словакию" },
       {
-        year: "1993",
+        year: 1993,
         description: "Подписание Маастрихтского договора о создании Евросоюза",
       },
-      { year: "1994", description: "Начало геноцида в Руанде" },
+      { year: 1994, description: "Начало геноцида в Руанде" },
       {
-        year: "1995",
+        year: 1995,
         description: "Взрыв в федеральном здании в Оклахома-Сити",
       },
-      { year: "1996", description: "Талибан захватывает власть в Афганистане" },
+      { year: 1996, description: "Талибан захватывает власть в Афганистане" },
       {
-        year: "1997",
+        year: 1997,
         description: "Возвращение Гонконга под юрисдикцию Китая",
       },
     ],
   },
   {
-    years: "1994 - 2004",
+    yearStart: 1994,
+    yearEnd: 2004,
+    categories: "Технологии и наука",
     events: [
-      { year: "1994", description: "Основание компании Amazon.com" },
+      { year: 1994, description: "Основание компании Amazon.com" },
       {
-        year: "1996",
+        year: 1996,
         description:
           "Рождение овечки Долли - первого клонированного млекопитающего",
       },
-      { year: "1998", description: "Основание компании Google" },
+      { year: 1998, description: "Основание компании Google" },
       {
-        year: "2000",
+        year: 2000,
         description: "Взлом Y2K - проблема перехода в новое тысячелетие",
       },
-      { year: "2001", description: "Теракты 11 сентября в США" },
-      { year: "2003", description: "Вторжение коалиционных сил в Ирак" },
+      { year: 2001, description: "Теракты 11 сентября в США" },
+      { year: 2003, description: "Вторжение коалиционных сил в Ирак" },
     ],
   },
   {
-    years: "1987 - 1991",
+    yearStart: 1987,
+    yearEnd: 1991,
+    categories: "Крушение биполярного мира",
     events: [
       {
-        year: "1987",
+        year: 1987,
         description:
           "Подписание договора о ликвидации ракет средней и малой дальности",
       },
-      { year: "1988", description: "Землетрясение в Спитаке, Армения" },
-      { year: "1989", description: "Падение Берлинской стены" },
+      { year: 1988, description: "Землетрясение в Спитаке, Армения" },
+      { year: 1989, description: "Падение Берлинской стены" },
       {
-        year: "1990",
+        year: 1990,
         description: "Объединение Восточной и Западной Германии",
       },
       {
-        year: "1991",
+        year: 1991,
         description: 'Операция "Буря в пустыне" в Персидском заливе',
       },
-      { year: "1991", description: "Распад Советского Союза" },
+      { year: 1991, description: "Распад Советского Союза" },
     ],
   },
   {
-    years: "2015 - 2022",
+    yearStart: 2015,
+    yearEnd: 2022,
+    categories: "Современные кризисы и конфликты",
     events: [
-      { year: "2015", description: "Парижские террористические атаки" },
-      { year: "2016", description: "Brexit - выход Великобритании из ЕС" },
-      { year: "2018", description: "Начало торговой войны между США и Китаем" },
-      { year: "2020", description: "Пандемия COVID-19" },
-      { year: "2021", description: "Штурм Капитолия в Вашингтоне" },
+      { year: 2015, description: "Парижские террористические атаки" },
+      { year: 2016, description: "Brexit - выход Великобритании из ЕС" },
+      { year: 2018, description: "Начало торговой войны между США и Китаем" },
+      { year: 2020, description: "Пандемия COVID-19" },
+      { year: 2021, description: "Штурм Капитолия в Вашингтоне" },
       {
-        year: "2022",
-        description: "Начало полномасштабного вторжения России в Украину",
+        year: 2022,
+        description: "Начало СВО на Украине",
       },
     ],
   },
   {
-    years: "1997 - 2003",
+    yearStart: 1997,
+    yearEnd: 2003,
+    categories: "Экономика и технологии",
     events: [
-      { year: "1997", description: "Финансовый кризис в Азии" },
-      { year: "1998", description: "Основание компании PayPal" },
-      { year: "1999", description: "Возвращение Макао под юрисдикцию Китая" },
-      { year: "2000", description: "Путин избран президентом России" },
-      { year: "2001", description: "Крах доткомов - крах интернет-компаний" },
-      { year: "2003", description: "Запуск социальной сети MySpace" },
+      { year: 1997, description: "Финансовый кризис в Азии" },
+      { year: 1998, description: "Основание компании PayPal" },
+      { year: 1999, description: "Возвращение Макао под юрисдикцию Китая" },
+      { year: 2000, description: "Путин избран президентом России" },
+      { year: 2001, description: "Крах доткомов - крах интернет-компаний" },
+      { year: 2003, description: "Запуск социальной сети MySpace" },
     ],
   },
   {
-    years: "2005 - 2010",
+    yearStart: 2005,
+    yearEnd: 2010,
+    categories: "Природные катастрофы и технологии",
     events: [
-      { year: "2005", description: "Ураган Катрина в Новом Орлеане" },
-      { year: "2006", description: "Запуск микроблоговой платформы Twitter" },
-      { year: "2007", description: "Презентация первого iPhone" },
-      { year: "2008", description: "Мировой финансовый кризис" },
+      { year: 2005, description: "Ураган Катрина в Новом Орлеане" },
+      { year: 2006, description: "Запуск микроблоговой платформы Twitter" },
+      { year: 2007, description: "Презентация первого iPhone" },
+      { year: 2008, description: "Мировой финансовый кризис" },
       {
-        year: "2009",
+        year: 2009,
         description:
           "Инаугурация Барака Обамы - первого чернокожего президента США",
       },
       {
-        year: "2010",
+        year: 2010,
         description: "Извержение вулкана Эйяфьядлайёкюдль в Исландии",
       },
     ],
   },
 ];
+
+export const breakpoints = {
+  // Mobile
+  mobileS: "320px", // iPhone SE, small Android
+  mobileM: "375px", // iPhone 12/13/14 Mini
+  mobileL: "425px", // iPhone 12/13/14 Pro, most Android
+  mobileXL: "480px", // Larger phones
+
+  // Tablet
+  tablet: "768px", // iPad Mini, small tablets
+  tabletL: "1024px", // iPad Pro, larger tablets
+
+  // Desktop
+  laptop: "1200px",
+  desktop: "1440px",
+  desktopL: "1920px", // Full HD+
+};

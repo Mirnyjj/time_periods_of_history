@@ -5,6 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack serve --mode development"
   },
   "repository": {
@@ -22,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/Mirnyjj/time_periods_of_history/issues"
   },
-  "homepage": "https://github.com/Mirnyjj/time_periods_of_history#readme",
+  "homepage": "https://Mirnyjj.github.io/time_periods_of_history",
   "devDependencies": {
     "@babel/core": "^7.28.3",
     "@babel/preset-env": "^7.28.3",
@@ -31,6 +33,7 @@
     "@types/react-dom": "^19.1.7",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.4",
     "style-loader": "^4.0.0",
     "webpack": "^5.101.3",

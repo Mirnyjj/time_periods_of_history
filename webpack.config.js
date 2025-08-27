@@ -1,16 +1,16 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 const package = require("./package.json");
 const commonPaths = require("./commonPaths");
 
 const isDebug = !process.argv.includes("release");
+const isProduction = process.env.NODE_ENV === "production";
 const port = process.env.PORT || 3000;
 
 module.exports = {
   entry: commonPaths.entryPath,
   output: {
     uniqueName: package.name,
-    publicPath: "/",
+    publicPath: isProduction ? "/time_periods_of_history/" : "/",
     path: commonPaths.outputPath,
     filename: isDebug
       ? "js/[name].js"
@@ -27,6 +27,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "public/index.html",
       filename: "index.html",
+      base: isProduction ? "/time_periods_of_history/" : "/", // ← И здесь тоже
     }),
   ],
   devServer: {
