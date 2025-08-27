@@ -53,7 +53,6 @@ const CircleContainer = styled.div`
   justify-content: center;
   width: 100%;
   position: relative;
-  margin: -100px 0;
   @media (max-width: ${breakpoints.mobileXL}) {
     display: none;
   }
