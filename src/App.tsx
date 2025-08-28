@@ -4,6 +4,7 @@ import { breakpoints, historicalPeriods } from "./data";
 import { CounterDate } from "./components/CounterDate";
 import CircleComponent from "./components/Circle";
 import ControlButtonDot from "./components/ControlButtonDot";
+import Carousel from "./components/Carousel";
 
 const App = () => {
   const [activeDot, setActiveDot] = React.useState(0);
@@ -93,8 +94,19 @@ const App = () => {
           dotsCount={dotsCount}
           handleDotClick={handleDotClick}
         />
-        {/* <ContentSlider /> */}
+        <CarouselWrapper $visible={textVisible}>
+          <Carousel item={historicalPeriods[activeDot].events} />
+        </CarouselWrapper>
       </ContentContainer>
+      <Pagination>
+        {historicalPeriods.map((item, index) => (
+          <ButtonPagination
+            key={index}
+            $active={activeDot === index}
+            onClick={() => handleDotClick(index)}
+          />
+        ))}
+      </Pagination>
     </Main>
   );
 };
@@ -106,10 +118,26 @@ const Main = styled.main`
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  width: 100%;
+  max-width: 100%;
   background-color: #f4f5f9;
   @media (max-width: ${breakpoints.mobileXL}) {
     min-height: 100%;
+    height: 100vh;
+  }
+  .custom-pagination {
+    display: none;
+    @media (max-width: ${breakpoints.mobileXL}) {
+      display: block;
+      position: relative !important;
+      bottom: -30px !important;
+      left: 50% !important;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
   }
 `;
 
@@ -123,7 +151,7 @@ const ContentContainer = styled.div`
   border-right: 1px solid rgba(0.25, 0.25, 0.25, 0.1);
   @media (max-width: ${breakpoints.mobileXL}) {
     border: none;
-    margin: 0 20px 0 27px;
+    margin: 0 20px;
   }
 `;
 
@@ -186,6 +214,7 @@ const H2 = styled.div`
     padding-top: 59px;
     padding-left: 0;
     font-size: 20px;
+    // margin: 0 20px;
   }
 `;
 
@@ -218,9 +247,37 @@ const DateWrapper = styled.div`
   }
 `;
 
-const ContentSlider = styled.div`
-  width: 100%;
-  padding: 0 80px;
-  margin: 0 auto;
-  border: 1px solid #c7cdd9;
+const CarouselWrapper = styled.div<{ $visible: boolean }>`
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  transition: opacity 0.6s ease;
+  @media (max-width: ${breakpoints.mobileXL}) {
+    position: relative;
+  }
+`;
+
+const Pagination = styled.div`
+  display: none;
+  @media (max-width: ${breakpoints.mobileXL}) {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: auto;
+  }
+`;
+
+const ButtonPagination = styled.button<{ $active: boolean }>`
+  background-color: #42567a;
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  border: none;
+  opacity: ${(props) => (props.$active ? 1 : 0.4)};
 `;

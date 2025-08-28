@@ -116,18 +116,8 @@ export const historicalPeriods = [
 ];
 
 export const breakpoints = {
-  // Mobile
-  mobileS: "320px", // iPhone SE, small Android
-  mobileM: "375px", // iPhone 12/13/14 Mini
-  mobileL: "425px", // iPhone 12/13/14 Pro, most Android
-  mobileXL: "480px", // Larger phones
-
-  // Tablet
-  tablet: "768px", // iPad Mini, small tablets
-  tabletL: "1024px", // iPad Pro, larger tablets
-
-  // Desktop
-  laptop: "1200px",
-  desktop: "1440px",
-  desktopL: "1920px", // Full HD+
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  mobileXL: "480px",
 };

@@ -47,7 +47,6 @@ export const CounterDate = ({
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
       } else {
-        // Гарантируем точное конечное значение
         setCount(date.new);
       }
     };

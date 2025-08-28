@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { ButtonControl } from "./ButtonControl";
 import { breakpoints } from "../data";
 
 type Props = {
@@ -31,13 +32,23 @@ export default function ControlButtonDot({
       <ButtonWrapper>
         <ButtonControl
           disabled={activeDot === 0}
-          $side="left"
+          side="left"
           onClick={() => handleControlClick("back")}
+          size="50px"
+          background="#e5e5e5"
+          arrowColor="#42567a"
+          arrowSize="8.84px"
+          border={true}
         />
         <ButtonControl
           disabled={activeDot + 1 === dotsCount}
-          $side="right"
+          side="right"
           onClick={() => handleControlClick("next")}
+          size="50px"
+          background="#e5e5e5"
+          arrowColor="#42567a"
+          arrowSize="8.84px"
+          border={true}
         />
       </ButtonWrapper>
     </СontrolСontainer>
@@ -47,10 +58,13 @@ export default function ControlButtonDot({
 const СontrolСontainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding-left: 78px;
+  padding-left: 80px;
   gap: 20px;
   @media (max-width: ${breakpoints.mobileXL}) {
     padding-left: 0;
+    gap: 10.67px;
+    position: absolute;
+    bottom: 13.33px;
   }
 `;
 
@@ -59,6 +73,9 @@ const CounterPeriod = styled.span`
   font-weight: 400;
   font-size: 18px;
   color: #42567a;
+  @media (max-width: ${breakpoints.mobileXL}) {
+    font-size: 14px;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -66,49 +83,7 @@ const ButtonWrapper = styled.div`
   justify-content: start;
   flex-wrap: no-wrap;
   gap: 20px;
-`;
-
-const ButtonControl = styled.button<{ $side: string }>`
-  border: 1px solid #42567a;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  background-color: #f4f5f9;
-
-  &::after {
-    content: "";
-    width: 8.84px;
-    height: 8.84px;
-    border-left: 2px solid #42567a;
-    border-bottom: 2px solid #42567a;
-    transform: ${(props) =>
-      props.$side === "left" ? "rotate(45deg)" : "rotate(-135deg)"};
-    transition: all 0.3s ease;
-  }
-
-  &:disabled {
-    border: 1px solid rgba(0.25, 0.25, 0.25, 0.1);
-    cursor: not-allowed;
-    background-color: #f4f5f9;
-
-    &::after {
-      border-left: 2px solid rgba(0.25, 0.25, 0.25, 0.1);
-      border-bottom: 2px solid rgba(0.25, 0.25, 0.25, 0.1);
-    }
-
-    &:hover {
-      background-color: #f4f5f9;
-    }
-  }
-
-  &:not(:disabled):hover {
-    background-color: #fff;
+  @media (max-width: ${breakpoints.mobileXL}) {
+    gap: 8.33px;
   }
 `;
