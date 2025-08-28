@@ -53,11 +53,15 @@ export default function Carousel({ item }: Props) {
         }}
         breakpoints={{
           320: {
-            slidesPerView: 2,
+            width: 166,
             spaceBetween: 25,
             watchSlidesProgress: true,
           },
 
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 80,
+          },
           1440: {
             slidesPerView: 3,
             spaceBetween: 80,
@@ -116,8 +120,8 @@ const OuterContainer = styled.div`
     margin: 0;
     @media (max-width: ${breakpoints.mobileXL}) {
       gap: 0;
-      max-width: 100%;
-      min-width: 360px;
+      max-width: 100vw;
+      // min-width: 100vw;
       overflow: visible;
     }
   }

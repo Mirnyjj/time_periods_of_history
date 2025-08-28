@@ -60,7 +60,7 @@ const App = () => {
         <CenterLines />
         <VectorLiner />
         <H2>
-          Менеджер <br /> изображений
+          Исторические <br /> даты
         </H2>
         <CircleComponent
           rotationAngle={rotationAngle}
@@ -89,6 +89,9 @@ const App = () => {
             left={false}
           />
         </DateWrapper>
+        <Categories $visible={textVisible}>
+          {historicalPeriods[activeDot].categories}
+        </Categories>
         <ControlButtonDot
           activeDot={activeDot}
           dotsCount={dotsCount}
@@ -119,30 +122,17 @@ const Main = styled.main`
   display: flex;
   justify-content: center;
   max-width: 100%;
+
   background-color: #f4f5f9;
   @media (max-width: ${breakpoints.mobileXL}) {
     min-height: 100%;
     height: 100vh;
-  }
-  .custom-pagination {
-    display: none;
-    @media (max-width: ${breakpoints.mobileXL}) {
-      display: block;
-      position: relative !important;
-      bottom: -30px !important;
-      left: 50% !important;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-    }
+    overflow: hidden;
   }
 `;
 
 const ContentContainer = styled.div`
-  width: 100%;
+  max-width: 1440px;
   margin: 0 160px 0 320px;
   position: relative;
   display: flex;
@@ -218,6 +208,23 @@ const H2 = styled.div`
   }
 `;
 
+const Categories = styled.div<{ $visible: boolean }>`
+  display: none;
+  @media (max-width: ${breakpoints.mobileXL}) {
+    opacity: ${(props) => (props.$visible ? 1 : 0)};
+    transition: opacity 0.6s ease;
+    display: block;
+    width: 100%;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #42567a;
+    border-bottom: 1px solid #c7cdd9;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+`;
+
 const DateWrapper = styled.div`
   position: absolute;
   top: 50%;
@@ -234,7 +241,7 @@ const DateWrapper = styled.div`
   white-space: nowrap;
   @media (max-width: ${breakpoints.mobileXL}) {
     position: unset;
-    padding: 56px 0 58px 0;
+    padding: 56px 0 38px 0;
     font-size: 56px;
     line-height: normal;
     leter-spacing: -2%;
@@ -242,8 +249,6 @@ const DateWrapper = styled.div`
     top: 0;
     left: 0;
     transform: translate(0, 0);
-    border-bottom: 1px solid #c7cdd9;
-    margin-bottom: 20px;
   }
 `;
 

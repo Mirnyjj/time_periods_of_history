@@ -6,7 +6,7 @@
   "scripts": {
     "build": "SET NODE_ENV=production&& webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "SET NODE_ENV=production&& gh-pages -d build",
+    "deploy": "SET NODE_ENV=production && gh-pages -d build",
     "start": "webpack serve --mode development"
   },
   "repository": {
